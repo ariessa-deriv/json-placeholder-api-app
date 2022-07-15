@@ -1,8 +1,7 @@
-import { isValidInputTimeValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
-import commentService from "../../services/comments";
+import commentService from "../services/comments";
 
-const FormPut = () => {
+const PutRequest = () => {
   const [response, setResponse] = React.useState([]);
   const idInput = React.useRef(null);
   const nameInput = React.useRef(null);
@@ -22,11 +21,6 @@ const FormPut = () => {
       email: emailInputValue,
       body: bodyInputValue,
     };
-    console.log("idInputValue: ", idInputValue);
-    console.log("nameInputValue: ", nameInputValue);
-    console.log("emailInputValue: ", emailInputValue);
-    console.log("bodyInputValue: ", bodyInputValue);
-    console.log("obj: ", commentObject);
 
     commentService
       .update(idInputValue, commentObject)
@@ -117,18 +111,18 @@ const FormPut = () => {
               </button>
             </div>
           </div>
-        </div>
-        <div className="max-w-md w-full space-y-8 flex flex-col items-center justify-center">
-          <h3 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Response
-          </h3>
-          <div className="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-            <p
-              style={{ whitespace: "normal" }}
-              className="font-normal text-gray-700 dark:text-gray-400"
-            >
-              {JSON.stringify(response, null, 2)}
-            </p>
+          <div className="max-w-md w-full space-y-8 flex flex-col items-center justify-center">
+            <h3 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              Response
+            </h3>
+            <div className="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              <p
+                style={{ whitespace: "normal" }}
+                className="font-normal text-gray-700 dark:text-gray-400"
+              >
+                {JSON.stringify(response, null, 2)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -136,4 +130,4 @@ const FormPut = () => {
   );
 };
 
-export default FormPut;
+export default PutRequest;

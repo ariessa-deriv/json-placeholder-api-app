@@ -1,7 +1,7 @@
 import React from "react";
-import commentService from "../../services/comments";
+import commentService from "../services/comments";
 
-const FormDelete = () => {
+const DeleteRequest = () => {
   const [response, setResponse] = React.useState([]);
   const idInput = React.useRef(null);
 
@@ -9,10 +9,11 @@ const FormDelete = () => {
     const idInputValue = idInput.current.value;
     console.log("idInputValue", idInputValue);
 
-    commentService.remove(idInputValue).then((initialComment) => {
-      setResponse(initialComment);
+    commentService.remove(idInputValue).then((initialResponse) => {
+      setResponse(initialResponse);
     });
   };
+
   return (
     <>
       <div className="min-h-full flex flex-col items-center space-y-28 justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -32,7 +33,7 @@ const FormDelete = () => {
                   ref={idInput}
                   id="id"
                   name="id"
-                  type="nid"
+                  type="id"
                   autoComplete="id"
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -70,4 +71,4 @@ const FormDelete = () => {
   );
 };
 
-export default FormDelete;
+export default DeleteRequest;

@@ -1,11 +1,9 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import commentService from "./services/comments";
-import FormPost from "./components/Forms/FormPost";
-import FormPut from "./components/Forms/FormPut";
+import FormPost from "./components/PostRequest";
+import FormPut from "./components/PutRequest";
 import GetRequest from "./components/GetRequest";
 import GetRequestByID from "./components/GetRequestById";
-import FormDelete from "./components/Forms/FormDelete";
+import FormDelete from "./components/DeleteRequest";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 

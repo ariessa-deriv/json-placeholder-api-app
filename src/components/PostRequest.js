@@ -1,7 +1,7 @@
 import React from "react";
-import commentService from "../../services/comments";
+import commentService from "../services/comments";
 
-const FormPost = () => {
+const PostRequest = () => {
   const [response, setResponse] = React.useState([]);
   const nameInput = React.useRef(null);
   const emailInput = React.useRef(null);
@@ -109,4 +109,4 @@ const FormPost = () => {
   );
 };
 
-export default FormPost;
+export default PostRequest;
