@@ -62,20 +62,6 @@ const GetRequestByID = () => {
                 {JSON.stringify(comment, null, 2)}
               </p>
             </div>
-
-            {/* {comments.map((item, index) => {
-              console.log(item);
-              return (
-                <div
-                  key={index}
-                  className="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                >
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                    {JSON.stringify(item, null, 4)}
-                  </p>
-                </div>
-              );
-            })} */}
           </div>
         </div>
       </div>
